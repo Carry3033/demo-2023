@@ -1,0 +1,23 @@
+{
+  "name": "demo-2023",
+  "version": "1.0.0",
+  "description": "学习vue3项目",
+  "main": "index.js",
+  "scripts": {
+    "serve": "webpack server",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "css-loader": "^6.10.0",
+    "sass": "^1.71.1",
+    "sass-loader": "^14.1.1",
+    "style-loader": "^3.3.4"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^5.6.0",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.2"
+  }
+}
