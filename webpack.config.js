@@ -1,5 +1,6 @@
 const path = require('path')                // 引入node内置模块path
 const htmlwebpackPlugin = require('html-webpack-plugin') // 构建html文件
+const VueLoaderPlugin = require('vue-loader/lib/plugin') // 构建vue文件
 
 module.exports ={
   mode: "development",                      // 开发模式
@@ -16,7 +17,11 @@ module.exports ={
   module: {
     rules: [
       {
-        test: /.s[ac]ss$/i,
+        test: /\.vue$/i,
+        use: 'vue-loader'
+      },
+      {
+        test: /\.s[ac]ss$/i,
         use: [                              // 这个顺序是从右往左的
           'style-loader',                   // 将 JS 字符串生成为 style 节点
           'css-loader',                     // 将 CSS 转化成 CommonJS 模块
@@ -28,8 +33,9 @@ module.exports ={
   plugins: [
     new htmlwebpackPlugin({                 // 自动插入到dist目录中
       title: 'webpack项目',
-      // favicon: './public/favicon.ico',   // 网页图标配置
-      template: './src/index.html'
-    })
+    //   favicon: './public/favicon.ico',   // 网页图标配置
+    //   template: './src/index.html'
+    }),
+    new VueLoaderPlugin()
   ]
 }
