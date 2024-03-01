@@ -2,7 +2,6 @@
   "name": "demo-2023",
   "version": "1.0.0",
   "description": "学习vue3项目",
-  "main": "index.js",
   "scripts": {
     "serve": "webpack server",
     "build": "webpack",

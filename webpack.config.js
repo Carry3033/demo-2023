@@ -34,7 +34,7 @@ module.exports ={
     new htmlwebpackPlugin({                 // 自动插入到dist目录中
       title: 'webpack项目',
     //   favicon: './public/favicon.ico',   // 网页图标配置
-    //   template: './src/index.html'
+      template: './src/index.html'
     }),
     new VueLoaderPlugin()
   ]
