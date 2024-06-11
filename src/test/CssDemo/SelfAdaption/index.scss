@@ -1,0 +1,15 @@
+.adaption {
+    display: flex;
+
+    .header {
+        height: 40px;
+    }
+
+    .container {
+        flex-grow: 1;
+    }
+
+    .floor {
+        height: 40px;
+    }
+}
