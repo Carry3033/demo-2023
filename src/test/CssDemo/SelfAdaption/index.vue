@@ -6,7 +6,7 @@
 
         <div class="container">
             <div class="scroll">
-                <div v-for="item in contextList">{{item}}</div>
+                <div v-for="(item, index) in contextList" :key="index">{{item}}</div>
             </div>
         </div>
 
