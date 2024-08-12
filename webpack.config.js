@@ -4,7 +4,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin') // 构建vue文件
 
 module.exports ={
   mode: "development",                      // 开发模式
-  entry:'./src/main.js',                    // 入口文件，把src下的main.js编译到出口文件
+  entry:'./src/main.js',                    // 入口文件，entry 是告诉 Webpack 从哪里开始构建你的应用程序
   output:{                                  // 出口文件
     path:path.resolve(__dirname,'dist'),    // 出口路径和目录
     filename: "[name].js",                  // 编译后的名称
@@ -33,8 +33,8 @@ module.exports ={
   plugins: [
     new htmlwebpackPlugin({                 // 自动插入到dist目录中
       title: 'webpack项目',
-    //   favicon: './public/favicon.ico',   // 网页图标配置
-      template: './src/index.html'
+      // favicon: './public/favicon.ico',   // 网页图标配置
+      template: './src/index.html'          // 模板文件（默认根目录下的index.html）是告诉 Webpack 如何生成最终的 HTML 文件 并将构建的输出包含进去
     }),
     new VueLoaderPlugin()
   ]

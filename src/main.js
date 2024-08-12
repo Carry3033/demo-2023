@@ -5,5 +5,5 @@ import Adaption from '../src/test/CssDemo/SelfAdaption/index.vue';
 console.log(document.querySelector('#app'));
 
 new Vue({
-  render: (h) => h(Adaption),
+    render: (h) => h(App),
 }).$mount('#app');
