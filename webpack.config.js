@@ -1,5 +1,5 @@
 const path = require('path')                // 引入node内置模块path
-const htmlwebpackPlugin = require('html-webpack-plugin') // 构建html文件
+const htmlwebpackPlugin = require('html-webpack-plugin') // 构建HTML文件，该插件不仅可以加载HTML文件，还可以自动注入JavaScript和CSS文件
 const VueLoaderPlugin = require('vue-loader/lib/plugin') // 构建vue文件
 
 module.exports ={
@@ -16,9 +16,26 @@ module.exports ={
   },
   module: {
     rules: [
+      // {
+      //   test: /\.html$/i,
+      //   use: 'html-loader'                  // 使用该插件处理html文件，配置后可在js文件中直接引入html文件
+      // },
+      // {
+      //   test: /\.html$/i,                   // 如果HTML文件中包含了图片、CSS、JavaScript文件的路径，需要配置
+      //   use: [
+      //     {
+      //       loader: 'html-loader',
+      //       options: {
+      //         // 处理图片路径
+      //         attrs: ['img:src', 'link:href']
+      //         // 其他选项
+      //       }
+      //     }
+      //   ]
+      // },
       {
         test: /\.vue$/i,
-        use: 'vue-loader'
+        use: 'vue-loader'                   // 使用该插件处理vue文件，配置后可在js文件中直接引入vue文件
       },
       {
         test: /\.s[ac]ss$/i,
