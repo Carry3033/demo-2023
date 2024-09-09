@@ -7,5 +7,6 @@
     "paths": {
       "@/*": ["src/*"] // 未设置 "baseUrl" 时，不允许使用非相对路径。
     }
-  }
+  },
+  "exclude": ["node_modules", "dist"]
 }

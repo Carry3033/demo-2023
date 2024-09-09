@@ -15,27 +15,20 @@ module.exports ={
     hot: true,                              //热服务
   },
   module: {
+    // 注意执行顺序，loader 的执行顺序是从下到上，从右到左
     rules: [
-      // {
-      //   test: /\.html$/i,
-      //   use: 'html-loader'                  // 使用该插件处理html文件，配置后可在js文件中直接引入html文件
-      // },
-      // {
-      //   test: /\.html$/i,                   // 如果HTML文件中包含了图片、CSS、JavaScript文件的路径，需要配置
-      //   use: [
-      //     {
-      //       loader: 'html-loader',
-      //       options: {
-      //         // 处理图片路径
-      //         attrs: ['img:src', 'link:href']
-      //         // 其他选项
-      //       }
-      //     }
-      //   ]
-      // },
       {
         test: /\.vue$/i,
-        use: 'vue-loader'                   // 使用该插件处理vue文件，配置后可在js文件中直接引入vue文件
+        loader: 'vue-loader'                    // 使用该插件处理vue文件，配置后可在js文件中直接引入vue文件
+      },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',                  // 使用该插件处理html文件，配置后可在js文件中直接引入html文件
+        // options: {                           // 如果HTML文件中包含了图片、CSS、JavaScript文件的路径，需要配置
+        //   // 处理图片路径
+        //   attrs: ['img:src', 'link:href']
+        //   // 其他选项
+        // }
       },
       {
         test: /\.s[ac]ss$/i,
@@ -54,5 +47,10 @@ module.exports ={
       template: './src/index.html'          // 模板文件（默认根目录下的index.html）是告诉 Webpack 如何生成最终的 HTML 文件 并将构建的输出包含进去
     }),
     new VueLoaderPlugin()
-  ]
+  ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src')
+    }
+  }
 }
