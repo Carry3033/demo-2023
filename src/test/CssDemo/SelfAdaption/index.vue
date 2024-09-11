@@ -22,7 +22,7 @@ export default {
     data() {
         return {
             title: '标题',
-            submit: '标题',
+            submit: '提交',
             contextList: ['内容区域']
         }
     },
@@ -32,7 +32,7 @@ export default {
     methods: {
         getContext() {
             this.contextList = [];
-            for (let i = 0; i < 20; i++) {
+            for (let i = 0; i < 5; i++) {
                 this.contextList.push('内容区域');
             }
         }
@@ -49,7 +49,6 @@ body {
 .adaption {
     display: flex;
     flex-direction: column;
-    height: 100vh;
 
     .header, .floor {
         display: flex;

@@ -3,7 +3,7 @@
         <p>{{success}}</p>
 
         <Adaption></Adaption>
-        <!-- <Adaption2></Adaption2> -->
+        <Adaption2></Adaption2>
     </div>
 </template>
 
@@ -15,7 +15,7 @@ export default {
     name: 'App',
     components: {
         Adaption,
-        // Adaption2,
+        Adaption2
     },
     data() {
         return {
@@ -23,7 +23,7 @@ export default {
         };
     },
     mounted() {
-        console.log(Adaption2);
+
     }
 };
 </script>
