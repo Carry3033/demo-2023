@@ -50,7 +50,8 @@ module.exports ={
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src')
+      '@': path.resolve(__dirname, 'src'),
+      'vue': 'vue/dist/vue.js'              // 默认 npm 包导出的是运行时构建，运行时构建不包含模板编译器，因此需要添加此行，否则 vue 中不支持 template 选项，只能用 render 选项
     }
   }
 }
